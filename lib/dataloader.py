@@ -1,9 +1,9 @@
 import torch
 import numpy as np
 import torch.utils.data
-from Second_paper_derive.Pems4.lib.add_window import Add_Window_Horizon
-from Second_paper_derive.Pems4.lib.load_dataset import load_st_dataset, load_wind_dataset
-from Second_paper_derive.Pems4.lib.normalization import NScaler, MinMax01Scaler, MinMax11Scaler, StandardScaler, ColumnMinMaxScaler
+from AGLCN.Pems4.lib.add_window import Add_Window_Horizon
+from AGLCN.Pems4.lib.load_dataset import load_wind_dataset
+from AGLCN.Pems4.lib.normalization import NScaler, MinMax01Scaler, MinMax11Scaler, StandardScaler, ColumnMinMaxScaler
 
 
 def normalize_dataset(data, normalizer, column_wise=False):
@@ -112,30 +112,3 @@ def get_dataloader(args, normalizer='std', tod=False, dow=False, weather=False, 
     test_dataloader = data_loader(x_test, y_test, args.batch_size, shuffle=False, drop_last=False)
     return train_dataloader, val_dataloader, test_dataloader, scaler, y_test
 
-
-if __name__ == '__main__':
-    import argparse
-
-    # MetrLA 207; BikeNYC 128; SIGIR_solar 137; SIGIR_electric 321
-    DATASET = 'PEMSD4' #'SIGIR_electric'
-    if DATASET == 'MetrLA':
-        NODE_NUM = 207
-    elif DATASET == 'BikeNYC':
-        NODE_NUM = 128
-    elif DATASET == 'SIGIR_solar':
-        NODE_NUM = 137
-    elif DATASET == 'SIGIR_electric':
-        NODE_NUM = 321
-    elif DATASET == 'PEMSD4':
-        NODE_NUM = 307
-    parser = argparse.ArgumentParser(description='PyTorch dataloader')
-    parser.add_argument('--dataset', default=DATASET, type=str)
-    parser.add_argument('--num_nodes', default=NODE_NUM, type=int)
-    parser.add_argument('--val_ratio', default=0.1, type=float)
-    parser.add_argument('--test_ratio', default=0.2, type=float)
-    parser.add_argument('--lag', default=12, type=int)
-    parser.add_argument('--horizon', default=12, type=int)
-    parser.add_argument('--batch_size', default=64, type=int)
-    args = parser.parse_args()
-    train_dataloader, val_dataloader, test_dataloader, scaler = get_dataloader(args, normalizer='std', tod=False,
-                                                                               dow=False, weather=False, single=True)
