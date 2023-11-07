@@ -12,5 +12,5 @@ The official implementation of [Adaptive graph learning-convolutional network fo
 ## Train Commands
 
 ```
-python train.py --gcn_bool  --addaptadj
+python ./wind/train_wind.py --gcn_bool  --addaptadj
 ```
