@@ -1,0 +1,28 @@
+Namespace(addaptadj=True, batch_size=64, column_wise=False, dataset='wind', device='cuda:0', dilation_exponential=1, dropout=0.3, dropout_ingc=0.3, embed_dim=10, epochs=5, eta=1, expid=1, gamma=0.0001, gcn_bool=True, horizon=1, in_dim=1, lag=12, layers=3, learning_rate=0.001, log_file='./log/wind_log', moco=0.99, nhid=8, num_nodes=40, order=0, print_every=50, rate=1, save='./model/wind', seed=99, tc_dropout=0.1, test_ratio=0.2, val_ratio=0.1, weight_decay=0.0)
+The model parameter number is: 45735
+Iter: 000, 2.1075 :Train Loss, 0.8153:Train MAPE, 3.2433: Train RMSE
+Iter: 050, 0.7121 :Train Loss, 0.3059:Train MAPE, 1.4652: Train RMSE
+Iter: 100, 0.8169 :Train Loss, 0.3202:Train MAPE, 1.7111: Train RMSE
+Epoch: 001, Train Loss: 0.8185, Train MAPE: 0.3153, Train RMSE: 1.6275, Valid Loss: 1.1229, Valid MAPE: 0.3092, Valid RMSE: 1.5021, Training Time: 40.0231/epoch
+Iter: 000, 0.6845 :Train Loss, 0.3074:Train MAPE, 1.4121: Train RMSE
+Iter: 050, 0.7201 :Train Loss, 0.3032:Train MAPE, 1.4933: Train RMSE
+Iter: 100, 0.6595 :Train Loss, 0.2544:Train MAPE, 1.3547: Train RMSE
+Epoch: 002, Train Loss: 0.7045, Train MAPE: 0.2881, Train RMSE: 1.4778, Valid Loss: 1.1194, Valid MAPE: 0.3200, Valid RMSE: 1.4925, Training Time: 4.5318/epoch
+Iter: 000, 0.6785 :Train Loss, 0.2645:Train MAPE, 1.5481: Train RMSE
+Iter: 050, 0.6988 :Train Loss, 0.3230:Train MAPE, 1.4282: Train RMSE
+Iter: 100, 0.7162 :Train Loss, 0.3511:Train MAPE, 1.4412: Train RMSE
+Epoch: 003, Train Loss: 0.6948, Train MAPE: 0.2844, Train RMSE: 1.4651, Valid Loss: 1.1098, Valid MAPE: 0.2958, Valid RMSE: 1.4895, Training Time: 4.5406/epoch
+Iter: 000, 0.6054 :Train Loss, 0.2379:Train MAPE, 1.4278: Train RMSE
+Iter: 050, 0.7237 :Train Loss, 0.2827:Train MAPE, 1.5234: Train RMSE
+Iter: 100, 0.6418 :Train Loss, 0.2815:Train MAPE, 1.3722: Train RMSE
+Epoch: 004, Train Loss: 0.6839, Train MAPE: 0.2814, Train RMSE: 1.4492, Valid Loss: 1.1024, Valid MAPE: 0.3007, Valid RMSE: 1.4754, Training Time: 4.5140/epoch
+Iter: 000, 0.6469 :Train Loss, 0.2767:Train MAPE, 1.4309: Train RMSE
+Iter: 050, 0.6208 :Train Loss, 0.2891:Train MAPE, 1.3503: Train RMSE
+Iter: 100, 0.6410 :Train Loss, 0.2752:Train MAPE, 1.3643: Train RMSE
+Epoch: 005, Train Loss: 0.6770, Train MAPE: 0.2790, Train RMSE: 1.4396, Valid Loss: 1.0958, Valid MAPE: 0.2943, Valid RMSE: 1.4706, Training Time: 4.5681/epoch
+Average Training Time: 11.6355 secs/epoch
+Average Inference Time: 0.1590 secs
+The valid loss on best model is 1.0958
+seed is 99
+Evaluate best model on test data for horizon 1, Test MAE: 1.0390, Test MAPE: 0.2681, Test RMSE: 1.3970
+On average over 12 horizons, Test MAE: 1.0390, Test MAPE: 0.2681, Test RMSE: 1.3970
