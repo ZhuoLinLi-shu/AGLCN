@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 from ..graph_learn import graph_constructor
-from Second_paper_final.layer_mtgnn import *
+from .layer_mtgnn import *
 import numpy as np
 
 class dnconv(nn.Module):
